@@ -4,7 +4,6 @@ import {BsThreeDots} from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 const LikedItem = ({like}) => {
-    console.log(like)
     return (
         <div className={`row w-100 p-2 m-0`}>
             <div className={`col-3 col-lg-4 text-dark d-none d-md-flex justify-content-center align-items-center bg-warning rounded-pill`}>

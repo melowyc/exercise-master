@@ -37,9 +37,9 @@ const store = configureStore({
 function App() {
   return (
     <Provider store={store}>
-      <Box width="400px" sx={{ width: { xl: "1488px" } }} m="auto" >
+      <Box width="400px" sx={{ width: { xl: "1488px" } }} m="auto" className={'m-0 w-100'}>
         <Navbar />
-        <IndexHeader />
+        {/* <IndexHeader /> */}
         {/* <IndexNavbar/> */}
 
         <Routes>

@@ -20,7 +20,6 @@ const MyNavbar = () => {
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
   const username = localStorage.getItem("username");
   const path = useLocation().pathname;
-
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -53,7 +52,7 @@ const MyNavbar = () => {
 
   return (
     <Navbar
-      className={classnames("fixed-top", navbarColor)}
+      className={path === '/' ? classnames("fixed-top", navbarColor, "pb-3", "pt-3") : `mb-2 pt-3 pb-3`}
     >
 
       <Container
@@ -90,7 +89,7 @@ const MyNavbar = () => {
               Home
             </Link>
             <a
-              href="#exercises"
+              href="/#exercises"
           style={{
             textDecoration: "none",
             color: "#b0b8bd",
@@ -101,6 +100,7 @@ const MyNavbar = () => {
             >
               Exercises
             </a>
+            
             
         {username === null ? (
           <Link

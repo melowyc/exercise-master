@@ -20,7 +20,7 @@ const ProfileDashboard = ({login}) => {
     const dispatch = useDispatch();
     const monthList = ['January', 'Feburary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',' November', 'December']
     const [upload, setUpload] = useState(false)
-    const [file, setFile] = useState('/images/profile-banner.jpeg')
+    const [file, setFile] = useState(profile.banner)
 
     const CategoryToId = {"RUNNING": 0 , "BOXING": 1, "YOGA": 2, "SWIMMING": 3 }
     const progress = new Array(4).fill(0)
@@ -50,6 +50,7 @@ const ProfileDashboard = ({login}) => {
 
   const hiddenFileInput = React.useRef(null);
   const handleChange = (event) => {
+    event.preventDefault();
     setFile(URL.createObjectURL(event.target.files[0]));
   };
   const handleCancel = () => {
@@ -94,12 +95,12 @@ const ProfileDashboard = ({login}) => {
           </div>
         )}
 
-        {login && !upload && (
+        {/* {login && !upload && (
           <FiEdit
             className={`position-absolute bottom-0`}
             onClick={() => setUpload(true)}
           />
-        )}
+        )} */}
       </div>
 
       {upload && (

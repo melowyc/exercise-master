@@ -7,6 +7,7 @@ import {profileRoute, getUser} from "../utils/APIRoutes";
 import { useDispatch } from 'react-redux';
 import { updateProfile } from '../utils/profile-reducer';
 
+
 const Profile = () => {
     const local_username = localStorage.getItem('username');
     const dispatch = useDispatch();

@@ -11,6 +11,7 @@ const profileSlice = createSlice({
         sleep: null,
         water: null,
         weight: null,
+        avatar: "/images/avatar/profile.png",
         likes: [],
     },
     reducers: {

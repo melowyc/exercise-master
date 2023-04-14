@@ -1,7 +1,7 @@
 import axios from "axios";
 import { profileRoute } from "./APIRoutes";
 
-const BASE_URL = "https://cs5500-proj-server.onrender.com";
+const BASE_URL = "http://localhost:4000";
 
 export const loadSingleUser = async (username) => {
   const response = await axios.get(`${BASE_URL}/oneuser`, {

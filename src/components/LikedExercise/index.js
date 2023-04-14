@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux';
 
 const LikedExercise = () => {
     const {likes} = useSelector(state => state.profile);
-    console.log("likes in list: ", likes)
 
     return (
         <div>

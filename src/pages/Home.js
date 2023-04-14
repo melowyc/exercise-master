@@ -13,7 +13,7 @@ const Home = () => {
     return (
         <Box>
 
-            {/* <IndexHeader /> */}
+            <IndexHeader />
             <SearchExercises setExercises={setExercises} bodyPart={bodyPart} setBodyPart={setBodyPart} />
             <Exercises setExercises={setExercises} exercises={exercises} bodyPart={bodyPart} />
         </Box>

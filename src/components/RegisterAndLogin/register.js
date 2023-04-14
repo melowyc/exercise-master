@@ -86,7 +86,7 @@ const Register = () => {
 
   return (
     <>
-      <div className="container d-flex justify-content-center">
+      <div className="container d-flex justify-content-center mt-5">
         <div className="row d-auth m-0">
           <div className="col">
             <h1>Register</h1>
