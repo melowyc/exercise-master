@@ -1,4 +1,4 @@
-export const host = "http://localhost:4000";
+export const host = "https://cs5500-proj-server.onrender.com";
 export const profileRoute = `${host}/api/userProfile`;
 export const planRoute = `${host}/api/plans`;
 export const getPlanRoute = `${host}/api//userPlan`;
