@@ -1,12 +1,14 @@
 .sidebar {
-  height: 95%;
+  height: 97%;
   background-color: #f9f9f9;
   border-radius: 20px;
-  margin: 20px;
+  margin: 15px;
 }
+
 .avatar {
   height: 20%;
 }
+
 .sidebar-card {
   border-radius: 20px;
   background-color: white;
