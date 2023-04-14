@@ -1,0 +1,16 @@
+.banner {
+    width: 100%;
+    /*height: 200px;*/
+    background-color: #f68355;
+    border-radius: 20px;
+    max-height: 300px;
+}
+
+.bg-color {
+    background-color: #f9e3b1;
+}
+
+.banner-text {
+    top: 30%;
+    right:5%;
+}

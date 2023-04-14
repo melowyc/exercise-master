@@ -1,0 +1,31 @@
+.bg-color {
+  background-color: navajowhite;
+}
+
+.plan-card {
+  width: 240px;
+  height: 120px;
+  background-color: #f9f9f9;
+}
+
+.plan-list {
+  width: 100%;
+  overflow: scroll;
+  display: flex;
+  white-space: nowrap;
+}
+
+.blank-plan {
+  font-size: 15px;
+  height: 120px;
+}
+
+.control-input {
+  background-color: #f7f0fc;
+}
+
+.login-hint {
+  width: 50%;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
