@@ -8,6 +8,7 @@ import { registerThunk } from "../../utils/users-thunks";
 
 const Register = () => {
   const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [country, setCountry] = useState("");
   const [gender, setGender] = useState("");
@@ -15,6 +16,7 @@ const Register = () => {
   const [validatePassword, setValidatePassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(null);
+  const [msg, setMsg] = useState("");
   const { currentUser } = useSelector((state) => state.users);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -53,6 +55,7 @@ const Register = () => {
     } else if (
       username === "" ||
       password === "" ||
+      email === "" ||
       validatePassword === "" ||
       userType === "" ||
       country === "" ||
@@ -67,8 +70,9 @@ const Register = () => {
     dispatch(registerThunk(newUser)).then((res) => {
       console.log(res);
       if (res.error) {
-        setError("Registration failed! Username already exists!");
+        setError("Registration failed! Username or email already exists!");
       } else {
+        setMsg(res.message);
         navigate("/login");
       }
     });
@@ -91,6 +95,7 @@ const Register = () => {
           <div className="col">
             <h1>Register</h1>
             {error && <div className="alert alert-danger">{error}</div>}
+            {msg && <div className="alert alert-success">{msg}</div>}
             <div className="d-control">
               <label htmlFor="userType" className="mt-2">
                 User Type
@@ -116,6 +121,16 @@ const Register = () => {
                 value={username}
                 placeholder="Please input a unique username*"
                 onChange={(e) => setUsername(e.target.value)}
+                required
+              />
+              <label htmlFor="email" className="mt-2">
+                Email
+              </label>
+              <input
+                className="form-control mb-2 mt-2 d-control-input"
+                value={email}
+                placeholder="Please input your email address*"
+                onChange={(e) => setEmail(e.target.value)}
                 required
               />
               <label htmlFor="country" className="mt-2">

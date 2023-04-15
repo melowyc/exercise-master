@@ -22,9 +22,7 @@ import profileReducer from "./utils/profile-reducer";
 import planReducer from "./utils/plan-reducer";
 import progressReducer from "./utils/progress-reducer";
 import ExerciseDetail from "./pages/ExerciseDetail";
-import IndexNavbar from "./components/IndexNavbar";
-import IndexHeader from "./components/IndexHeader";
-import styled from "@emotion/styled";
+import EmailVerify from "components/RegisterAndLogin/emailVerify";
 
 const store = configureStore({
   reducer: {
@@ -37,7 +35,12 @@ const store = configureStore({
 function App() {
   return (
     <Provider store={store}>
-      <Box width="400px" sx={{ width: { xl: "1488px" } }} m="auto" className={'m-0 w-100'}>
+      <Box
+        width="400px"
+        sx={{ width: { xl: "1488px" } }}
+        m="auto"
+        className={"m-0 w-100"}
+      >
         <Navbar />
         {/* <IndexHeader /> */}
         {/* <IndexNavbar/> */}
@@ -46,6 +49,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route
+            path="/users/:username/verify/:token"
+            element={<EmailVerify />}
+          />
           <Route path="/exercise/:id" element={<ExerciseDetail />} />
           <Route
             path="/profile"
