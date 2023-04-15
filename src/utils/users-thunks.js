@@ -5,6 +5,10 @@ export const registerThunk = createAsyncThunk(
   "register",
   async (user) => await register(user)
 );
+// export const verifyEmailThunk = createAsyncThunk(
+//   "verifyToken",
+//   async (user) => await verifyToken(user)
+// );
 
 export const loginThunk = createAsyncThunk(
   "login",

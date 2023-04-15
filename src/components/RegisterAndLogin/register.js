@@ -66,7 +66,7 @@ const Register = () => {
     }
     setError(null);
     console.log("userType is: ", userType);
-    const newUser = { username, password, country, gender, userType };
+    const newUser = { username, email, password, country, gender, userType };
     dispatch(registerThunk(newUser)).then((res) => {
       console.log(res);
       if (res.error) {

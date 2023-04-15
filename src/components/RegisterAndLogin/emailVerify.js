@@ -19,7 +19,7 @@ const EmailVerify = () => {
   useEffect(() => {
     const verifyEmailUrl = async () => {
       try {
-        const url = `https://exercise-master.netlify.app/users/${param.username}/verify/${param.token}`;
+        const url = `https://cs5500-proj-server.onrender.com/users/${param.username}/verify/${param.token}`;
         const { data } = await axios.get(url);
         console.log(data);
         setValidUrl(true);
