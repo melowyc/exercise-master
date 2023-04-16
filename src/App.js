@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import "./App.css";
 
-import { Route, Routes, HashRouter } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { Box } from "@mui/material";
 
 import "bootstrap/scss/bootstrap.scss";
@@ -35,38 +35,36 @@ const store = configureStore({
 function App() {
   return (
     <Provider store={store}>
-      <HashRouter>
-        <Box
-          width="400px"
-          sx={{ width: { xl: "1488px" } }}
-          m="auto"
-          className={"m-0 w-100"}
-        >
-          <Navbar />
-          {/* <IndexHeader /> */}
-          {/* <IndexNavbar/> */}
+      <Box
+        width="400px"
+        sx={{ width: { xl: "1488px" } }}
+        m="auto"
+        className={"m-0 w-100"}
+      >
+        <Navbar />
+        {/* <IndexHeader /> */}
+        {/* <IndexNavbar/> */}
 
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-            <Route
-              path="/users/:username/verify/:token"
-              element={<EmailVerify />}
-            />
-            <Route path="/exercise/:id" element={<ExerciseDetail />} />
-            <Route
-              path="/profile"
-              element={
-                <ProtectedRoute>
-                  <Profile />
-                </ProtectedRoute>
-              }
-            />
-          </Routes>
-          <Footer />
-        </Box>
-      </HashRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route
+            path="/users/:username/verify/:token"
+            element={<EmailVerify />}
+          />
+          <Route path="/exercise/:id" element={<ExerciseDetail />} />
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute>
+                <Profile />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+        <Footer />
+      </Box>
     </Provider>
   );
 }
