@@ -20,6 +20,7 @@ const Register = () => {
   const { currentUser } = useSelector((state) => state.users);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  let verified = false;
   const userTypeOptions = [
     {
       key: "Student",
@@ -66,14 +67,23 @@ const Register = () => {
     }
     setError(null);
     console.log("userType is: ", userType);
-    const newUser = { username, email, password, country, gender, userType };
+    const newUser = {
+      username,
+      email,
+      password,
+      country,
+      gender,
+      userType,
+      verified,
+    };
     dispatch(registerThunk(newUser)).then((res) => {
-      console.log(res);
+      console.log("register dispatch res", res);
       if (res.error) {
         setError("Registration failed! Username or email already exists!");
       } else {
-        setMsg(res.message);
-        navigate("/login");
+        console.log("register page res message", res.payload.message);
+        setMsg(res.payload.message);
+        // navigate("/login");
       }
     });
   };
@@ -83,10 +93,10 @@ const Register = () => {
 
   useEffect(() => {
     const username = localStorage.getItem("username");
-    if (currentUser || username) {
+    if (username) {
       navigate("/profile");
     }
-  }, [currentUser, navigate]);
+  }, [navigate]);
 
   return (
     <>

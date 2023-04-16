@@ -20,6 +20,8 @@ const EmailVerify = () => {
     const verifyEmailUrl = async () => {
       try {
         const url = `https://cs5500-proj-server.onrender.com/users/${param.username}/verify/${param.token}`;
+        // const url = `http://localhost:4000/users/${param.username}/verify/${param.token}`;
+        console.log("emailVerify", param.token);
         const { data } = await axios.get(url);
         console.log(data);
         setValidUrl(true);
@@ -35,14 +37,20 @@ const EmailVerify = () => {
     <>
       <div className="container d-flex justify-content-center mt-5">
         <div className="row d-auth m-0">
-          {!currentUser && <h1>Email Verify</h1>}
+          {/* {!currentUser && <h1>Email Verify</h1>} */}
           {!currentUser && validUrl && (
             <div className="d-control mt-4">
-              <img src="/images/verifysuccess.jpg" alt="success"></img>
+              <img
+                className="d-success-img"
+                src="/images/verifysuccess.jpg"
+                alt="success"
+              ></img>
               <h1>Email verified successfully</h1>
-              <Link to="/login">
-                <button className="d-actions-button w-100">Login</button>
-              </Link>
+              <div className="d-actions">
+                <Link to="/login">
+                  <button className="d-actions-button w-100">Login</button>
+                </Link>
+              </div>
             </div>
           )}
           {!currentUser && !validUrl && <h1>404 Not Found</h1>}

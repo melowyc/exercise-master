@@ -26,7 +26,7 @@ const Login = () => {
     dispatch(loginThunk(loginUser)).then((res) => {
       if (res.error) {
         setError(
-          "Login failed! Either username is not found or the password is incorrect!"
+          "Authentication failed! Either username is not found or the password is incorrect!"
         );
       } else {
         localStorage.setItem("username", username);
